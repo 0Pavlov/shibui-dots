@@ -1,0 +1,37 @@
+#star-button-box {
+	display: none !important;
+}
+
+#page-action-buttons {
+	display: none !important;
+}
+
+#reader-mode-button {
+	display: none !important;
+}
+
+#screenshots-button {
+	display: none !important;
+}
+
+#save-to-pocket-button {
+	display: none !important;
+}
+
+/*
+#unified-extensions-button {
+	display: none !important;
+}
+*/
+
+#add-tab-to-taskbar-button {
+	display: none !important;
+}
+
+#translations-button {
+	display: none !important;
+}
+
+#identity-icon-box:has(#identity-icon[tooltiptext^="Loaded by extension: Tabliss"]) {
+	display: none !important;
+}
