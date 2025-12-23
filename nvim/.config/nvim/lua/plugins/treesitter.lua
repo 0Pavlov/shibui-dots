@@ -2,7 +2,13 @@ return {
   "nvim-treesitter/nvim-treesitter",
   build = ":TSUpdate",
   config = function()
-    require("nvim-treesitter.configs").setup({
+    -- Check if the plugin is available before trying to configure it
+    local status_ok, configs = pcall(require, "nvim-treesitter.configs")
+    if not status_ok then
+      return
+    end
+
+    configs.setup({
       ensure_installed = {
         "c",
         "glsl",
