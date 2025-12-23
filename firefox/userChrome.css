@@ -35,3 +35,11 @@
 #identity-icon-box:has(#identity-icon[tooltiptext^="Loaded by extension: Tabliss"]) {
 	display: none !important;
 }
+
+/* OPTIONAL makes search bar content centered
+#urlbar-input {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+}
