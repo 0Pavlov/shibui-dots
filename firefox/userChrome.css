@@ -23,6 +23,7 @@
 	display: none !important;
 }
 */
+
 /* Hide extensions button, show on hover */
 #unified-extensions-button {
 	opacity: 0 !important;
@@ -86,6 +87,17 @@
 	opacity: 1 !important;
 }
 
+/* ADD any button to the toolbar, for achieving the urlbar centering */
+/* This way we have 3 buttons from left and 3 from right */
+/* Hide the button, show on hover */
+#firefox_tampermonkey_net-BAP {
+	opacity: 0 !important;
+    transition: opacity 0.5s ease-in-out;
+}
+#firefox_tampermonkey_net-BAP:hover {
+	opacity: 1 !important;
+}
+
 
 #add-tab-to-taskbar-button {
 	display: none !important;
@@ -99,7 +111,6 @@
 	display: none !important;
 }
 
-/* Makes search bar content centered */
 #urlbar-input {
     display: flex !important;
     justify-content: center !important;
