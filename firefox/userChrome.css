@@ -23,6 +23,69 @@
 	display: none !important;
 }
 */
+/* Hide extensions button, show on hover */
+#unified-extensions-button {
+	opacity: 0 !important;
+    transition: opacity 0.5s ease-in-out;
+}
+#unified-extensions-button:hover {
+	opacity: 1 !important;
+}
+
+/* Hide reload button, show on hover */
+#reload-button {
+	opacity: 0 !important;
+    transition: opacity 0.5s ease-in-out;
+}
+#reload-button:hover {
+	opacity: 1 !important;
+}
+
+/* Hide forward button, show on hover */
+#forward-button {
+	opacity: 0 !important;
+    transition: opacity 0.5s ease-in-out;
+}
+#forward-button:hover {
+	opacity: 1 !important;
+}
+
+/* Hide back button, show on hover */
+#back-button {
+	opacity: 0 !important;
+    transition: opacity 0.5s ease-in-out;
+}
+#back-button:hover {
+	opacity: 1 !important;
+}
+
+/* Hide stop button, show on hover */
+#stop-button {
+	opacity: 0 !important;
+    transition: opacity 0.5s ease-in-out;
+}
+#stop-button:hover {
+	opacity: 1 !important;
+}
+
+/* Hide menu button, show on hover */
+#PanelUI-menu-button {
+	opacity: 0 !important;
+    transition: opacity 0.5s ease-in-out;
+}
+#PanelUI-menu-button:hover {
+	opacity: 1 !important;
+}
+
+/* Hide tab close button, show on hover */
+.tab-close-button.close-icon {
+	opacity: 0 !important;
+    transition: opacity 0.5s ease-in-out;
+}
+.tab-close-button.close-icon:hover {
+	opacity: 1 !important;
+}
+
 
 #add-tab-to-taskbar-button {
 	display: none !important;
@@ -36,10 +99,34 @@
 	display: none !important;
 }
 
-/* OPTIONAL makes search bar content centered
+/* Makes search bar content centered */
 #urlbar-input {
     display: flex !important;
     justify-content: center !important;
     align-items: center !important;
     text-align: center !important;
+}
+
+#identity-permission-box {
+    display: none !important;
+}
+
+#identity-icon-box {
+    display: none !important;
+}
+
+#tracking-protection-icon-container {
+    display: none !important;
+}
+
+#urlbar-searchmode-switcher {
+    display: none !important;
+}
+
+#urlbar-go-button {
+    display: none !important;
+}
+
+tooltip {
+    display: none !important;
 }
