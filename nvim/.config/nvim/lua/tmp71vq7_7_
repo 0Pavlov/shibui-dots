@@ -1,0 +1,10 @@
+require("noirbuddy").setup({
+    colors = {
+        primary = "#dedede",   -- Your textPrimary
+        secondary = "#808080", -- Your textSecondary
+        background = "#121212", -- Your background
+        red = "#ff9e64",
+    },
+    preset = "minimal",
+})
+vim.cmd.colorscheme("noirbuddy")
