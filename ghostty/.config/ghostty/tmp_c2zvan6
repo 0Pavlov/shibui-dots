@@ -1,0 +1,18 @@
+#theme = Jellybeans
+cursor-invert-fg-bg = true
+background = #121212
+foreground = #dedede
+cursor-color = #dedede
+selection-background = #333333
+selection-foreground = #dedede
+# Optional: Set palette to grayscale/monochrome if desired
+palette = 0=#121212
+palette = 1=#555555
+palette = 2=#dedede
+palette = 3=#808080
+palette = 4=#333333
+palette = 5=#dedede
+palette = 6=#808080
+palette = 7=#dedede
+palette = 8=#262626
+palette = 15=#ffffff
