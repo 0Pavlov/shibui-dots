@@ -1,0 +1,240 @@
+#[character]
+#success_symbol = "[❯](bold #5e81ac)"
+#error_symbol = "[✗](#bf616a)"
+#
+#[directory]
+#format = "[$path]($style fg:#5e81ac) "
+#read_only = " "
+#
+#[cmd_duration]
+#format = '[ $duration ]($style fg:#4c566a)'
+#
+#[git_branch]
+#format = "[on]($style fg:#d08770) [$symbol$branch ]($style fg:#a3be8c)"
+#
+#[git_status]
+#style = "bold fg:#d08770"
+#
+#[python]
+#style = "bold fg:#d08770"
+## Original python status doesn't have space ater it.
+## It mixed with the next status. Otherwise, we don't
+## need to override the format here.
+#format = '[${symbol}${pyenv_prefix}(${version})(\($virtualenv\) )]($style)'
+#
+#[rust]
+#style = "bold fg:#bf616a"
+#
+#[nodejs]
+#symbol = "⬢ "
+#format = '[$symbol($version)]($style fg:#a3be8c)'
+format = """
+[╭](fg:current_line)\
+$os\
+$nix_shell\
+$directory\
+$git_branch\
+$git_status\
+$git_commit\
+$git_state\
+$fill\
+$nodejs\
+$dotnet\
+$python\
+$java\
+$lua\
+$golang\
+$c\
+$cmd_duration\
+$shell\
+$time\
+$username\
+$line_break\
+$character\
+"""
+
+palette = 'rosepine'
+add_newline = true
+
+[palettes.rosepine]
+foreground = '#e0def4'
+background = '#191724'
+current_line = '#403d52'
+primary = '#403d52'
+box = '#6e6a86'
+blue	= '#31748f'
+cyan = '#9ccfd8'
+green	= '#56949f'
+orange = '#f6c177'
+pink = '#ebbcba'
+purple = '#c4a7e7'
+red	= '#eb6f92'
+yellow = '#f6c177'
+
+[os]
+format = '(fg:current_line)[](fg:orange)[$symbol ](fg:primary bg:orange)[](fg:orange)'
+disabled = false
+
+[os.symbols]
+Alpine = ''
+Amazon = ''
+Android = ''
+Arch = ''
+CentOS = ''
+Debian = ''
+EndeavourOS = ''
+Fedora = ''
+FreeBSD = ''
+Garuda = ''
+Gentoo = ''
+Linux = ''
+Macos = ''
+Manjaro = ''
+Mariner = ''
+Mint = ''
+NetBSD = ''
+NixOS = ''
+OpenBSD = ''
+OpenCloudOS = ''
+openEuler = ''
+openSUSE = ''
+OracleLinux = '⊂⊃'
+Pop = ''
+Raspbian = ''
+Redhat = ''
+RedHatEnterprise = ''
+Solus = ''
+SUSE = ''
+Ubuntu = ''
+Unknown = ''
+Windows = ''
+
+
+[nix_shell]
+disabled = false
+impure_msg = ''
+style = "bg:color_orange fg:color_fg0"
+symbol = ' Nix'
+format = '[─](fg:current_line)[](fg:yellow)[$symbol ](fg:primary bg:yellow)[](fg:yellow)'
+heuristic = false
+
+[directory]
+format = '[─](fg:current_line)[](fg:green)[ ](fg:primary bg:green)[](fg:green bg:box)[ $read_only$truncation_symbol$path](fg:foreground bg:box)[](fg:box)'
+home_symbol = "󰉌 "
+truncation_symbol = ' '
+truncation_length = 2
+read_only = '󱧴 '
+read_only_style = ''
+
+[directory.substitutions]
+"Documents" = "󰈙"
+"Downloads" = " "
+"Music" = "󰝚 "
+"Pictures" = " "
+"Developer" = "󰲋 "
+"dev" = "󰲋 "
+
+[git_branch]
+format = '[─](fg:current_line)[](fg:cyan)[$symbol](fg:primary bg:cyan)[](fg:cyan bg:box)[ $branch](fg:foreground bg:box)[](fg:box bg:yellow)'
+symbol = ''
+
+[git_status]
+disabled = false
+format = '[( $all_status $ahead_behind)](fg:primary bg:yellow)[](fg:yellow bg:pink)'
+conflicted = ' '
+stashed = ' '
+deleted = ' '
+renamed = '󰑕 '
+modified = ' '
+typechanged = '󰕁 '
+staged = '$count: '
+untracked = '$count: '
+diverged = ' $ahead_count $behind_count '
+ahead = '$count: '
+behind = '$count: '
+up_to_date = ' '
+
+[git_commit]
+commit_hash_length = 5
+tag_symbol = ' '
+format = '[  $hash $tag](fg:primary bg:pink)[](fg:pink bg:background)'
+disabled = false
+only_detached = false
+tag_disabled = false
+
+[git_state]
+disabled = false
+format = '[─](fg:current_line)[](fg:red bg:background)[$state ](fg:primary bg:red)[$progress_current/$progress_total](fg:primary bg:red)[](fg:red bg:background)'
+rebase = ''
+merge = ''
+revert = '󰕌'
+cherry_pick = ''
+bisect = ''
+am = ''
+am_or_rebase = ' or '
+
+[nodejs]
+format = '[─](fg:current_line)[](fg:green)[$symbol](fg:primary bg:green)[](fg:green bg:box)[ $version](fg:foreground bg:box)[](fg:box)'
+symbol = '󰎙 Node.js'
+
+[dotnet]
+format = '[─](fg:current_line)[](fg:purple)[$symbol](fg:primary bg:purple)[](fg:purple bg:box)[ $tfm](fg:foreground bg:box)[](fg:box)'
+symbol = ' .NET'
+
+[python]
+format = '[─](fg:current_line)[](fg:cyan)[$symbol](fg:primary bg:cyan)[](fg:cyan bg:box)[ $version](fg:foreground bg:box)[](fg:box)'
+symbol = ' python'
+
+[java]
+format = '[─](fg:current_line)[](fg:red)[$symbol](fg:primary bg:red)[](fg:red bg:box)[ $version](fg:foreground bg:box)[](fg:box)'
+symbol = ' Java'
+
+[lua]
+format = '[─](fg:current_line)[](fg:blue)[$symbol](fg:primary bg:blue)[](fg:blue bg:box)[ $version](fg:foreground bg:box)[](fg:box)'
+symbol = ' Lua'
+
+[golang]
+format = '[─](fg:current_line)[](fg:cyan)[$symbol](fg:primary bg:cyan)[](fg:cyan bg:box)[ $version](fg:foreground bg:box)[](fg:box)'
+symbol = ' Go'
+
+[c]
+format = '[─](fg:current_line)[](fg:blue)[$symbol](fg:primary bg:blue)[](fg:blue bg:box)[ $version](fg:foreground bg:box)[](fg:box)'
+symbol = ' C'
+
+[rust]
+format = '[─](fg:current_line)[](fg:red)[$symbol](fg:primary bg:red)[](fg:red bg:box)[ $version](fg:foreground bg:box)[](fg:box)'
+symbol = ' Rust'
+
+[zig]
+format = '[─](fg:current_line)[](fg:yellow)[$symbol](fg:primary bg:yellow)[](fg:yellow bg:box)[ $version](fg:foreground bg:box)[](fg:box)'
+symbol = ' Rust'
+
+[fill]
+symbol = '─'
+style = 'fg:current_line'
+
+[cmd_duration]
+min_time = 500
+format = '[─](fg:current_line)[](fg:orange)[ ](fg:primary bg:orange)[](fg:orange bg:box)[ $duration ](fg:foreground bg:box)[](fg:box)'
+
+[shell]
+format = '[─](fg:current_line)[](fg:purple)[ ](fg:primary bg:purple)[](fg:purple bg:box)[ $indicator](fg:foreground bg:box)[](fg:box)'
+unknown_indicator = 'shell'
+powershell_indicator = 'powershell'
+fish_indicator = 'fish'
+disabled = false
+
+[time]
+format = '[─](fg:current_line)[](fg:purple)[󰦖 ](fg:primary bg:purple)[](fg:purple bg:box)[ $time](fg:foreground bg:box)[](fg:box)'
+time_format = '%H:%M'
+disabled = true
+
+[username]
+format = '[─](fg:current_line)[](fg:yellow)[ ](fg:primary bg:yellow)[](fg:yellow bg:box)[ $user](fg:foreground bg:box)[](fg:box) '
+show_always = true
+
+[character]
+format = """
+[╰─$symbol](fg:current_line) """
+success_symbol = '[❯](fg:bold green)'
+error_symbol = '[×](fg:bold red)'
