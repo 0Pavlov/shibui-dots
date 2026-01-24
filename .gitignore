@@ -1,2 +1,2 @@
 # Ignore the custom screenshot tool from my Endeavour system
-./config/quickshell/screenshot
+quickshell/.config/quickshell/screenshot
