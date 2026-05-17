@@ -1,0 +1,18 @@
+hl.config({
+    general = {
+        col = {
+            active_border = "rgba(26a168ff)",
+            inactive_border = "rgba(45475aff)"
+        }
+    },
+
+    misc = {
+        background_color = "rgba(11111BFF)"
+    },
+
+    decoration = {
+        shadow = {
+            color = "rgba(00000010)"
+        }
+    }
+})

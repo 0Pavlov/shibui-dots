@@ -4,7 +4,7 @@ def change_theme(theme_name: str):
     # Try to open hyprland theme specified in argv
     try:
         # Construct a string from argv
-        path_hyprland_argv: str = f"~/.config/theme-switcher/hyprland/{theme_name}.conf"
+        path_hyprland_argv: str = f"~/.config/theme-switcher/hyprland/{theme_name}.lua"
         # Expanduser for it to work on any system
         path_hyprland_argv = os.path.expanduser(path_hyprland_argv)
 
@@ -17,7 +17,7 @@ def change_theme(theme_name: str):
 
 
     # Path to the current hyprland theme
-    path_hyprland = os.path.expanduser("~/.config/hypr/hyprland/colors.conf")
+    path_hyprland = os.path.expanduser("~/.config/hypr/hyprland/colors.lua")
 
     # Try to open the file
     try:
