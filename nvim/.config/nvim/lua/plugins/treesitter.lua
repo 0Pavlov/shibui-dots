@@ -21,6 +21,7 @@ return {
         "css",
         "sql",
         "query",
+        "rust",
       },
       sync_install = false,
       highlight = {
