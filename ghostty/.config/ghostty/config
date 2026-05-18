@@ -11,6 +11,8 @@
 
 # Enable the custom shader
 custom-shader = ~/.config/ghostty/shaders/cursor_warp.glsl
+# Fix the cursor shader freeze when you unfocus the window
+custom-shader-animation = always
 
 # --- Font Configuration ---
 font-family = "JetBrainsMono Nerd Font"
