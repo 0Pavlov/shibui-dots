@@ -19,12 +19,11 @@ hl.curve("menu_accel",               { type = "bezier", points = { {0.52, 0.03},
 hl.curve("stall",                    { type = "bezier", points = { {1.0, -0.1},  {0.7,  0.85} } })
 
 -- ===============================================================================================
---  "popin X%" means the element starts at X% size and scales up to 100%.
---  "slide" = smooth translation; "slidevert" = vertical slide.
--- ===============================================================================================
-
--- ===============================================================================================
 -- Windows:
+-- ===============================================================================================
+--  "speed" means is the amount of ds (1ds = 100ms) the animation will take, lower - faster
+--  "popin X%" means the element starts at X% size and scales up to 100%
+--  "slide" = smooth translation; "slidevert" = vertical slide
 -- ===============================================================================================
 
 -- New window appears – scales from X% size to full size (pop‑in)
