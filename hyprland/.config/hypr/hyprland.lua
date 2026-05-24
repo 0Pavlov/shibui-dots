@@ -4,6 +4,7 @@ require("hyprland/colors")
 require("hyprland/keybinds")
 require("hyprland/execs")
 require("hyprland/amneziavpn")
+require("hyprland/animations")
 
 -- nwg-displays support
 require("workspaces")
