@@ -66,47 +66,6 @@ hl.config({
         dim_special = 0.07
     },
 
-    animations = {
-        enabled = true,
-        -- Curves
-        bezier = {
-            { name = "expressiveFastSpatial", points = { 0.42, 1.67, 0.21, 0.90 } },
-            { name = "expressiveSlowSpatial", points = { 0.39, 1.29, 0.35, 0.98 } },
-            { name = "expressiveDefaultSpatial", points = { 0.38, 1.21, 0.22, 1.00 } },
-            { name = "emphasizedDecel", points = { 0.05, 0.7, 0.1, 1 } },
-            { name = "emphasizedAccel", points = { 0.3, 0, 0.8, 0.15 } },
-            { name = "standardDecel", points = { 0, 0, 0, 1 } },
-            { name = "menu_decel", points = { 0.1, 1, 0, 1 } },
-            { name = "menu_accel", points = { 0.52, 0.03, 0.72, 0.08 } },
-            { name = "stall", points = { 1, -0.1, 0.7, 0.85 } }
-        },
-
-        -- windows
-        animation = {
-            { name = "windowsIn", style = "popin 80%", duration = 1, curve = "emphasizedDecel", style_duration = 3 },
-            { name = "fadeIn", duration = 1, curve = "emphasizedDecel", style_duration = 3 },
-            { name = "windowsOut", style = "popin 90%", duration = 1, curve = "emphasizedDecel", style_duration = 2 },
-            { name = "fadeOut", duration = 1, curve = "emphasizedDecel", style_duration = 2 },
-            { name = "windowsMove", style = "slide", duration = 1, curve = "emphasizedDecel", style_duration = 3 },
-            { name = "border", duration = 1, curve = "emphasizedDecel", style_duration = 10 },
-
-            -- layers
-            { name = "layersIn", style = "popin 93%", duration = 1, curve = "emphasizedDecel", style_duration = 2.7 },
-            { name = "layersOut", style = "popin 94%", duration = 1, curve = "menu_accel", style_duration = 2.4 },
-
-            -- fade
-            { name = "fadeLayersIn", duration = 1, curve = "menu_decel", style_duration = 0.5 },
-            { name = "fadeLayersOut", duration = 1, curve = "stall", style_duration = 2.7 },
-
-            -- workspaces
-            { name = "workspaces", style = "slide", duration = 1, curve = "menu_decel", style_duration = 7 },
-
-            -- specialWorkspace
-            { name = "specialWorkspaceIn", style = "slidevert", duration = 1, curve = "emphasizedDecel", style_duration = 2.8 },
-            { name = "specialWorkspaceOut", style = "slidevert", duration = 1, curve = "emphasizedAccel", style_duration = 1.2 }
-        }
-    },
-
     input = {
         kb_layout = "us,ru",
         numlock_by_default = true,
@@ -136,7 +95,8 @@ hl.config({
         allow_session_lock_restore = true,
         session_lock_xray = true,
         initial_workspace_tracking = false,
-        focus_on_activate = true
+        focus_on_activate = true,
+        --render_unfocused_fps = 60
     },
 
     binds = {
@@ -148,5 +108,5 @@ hl.config({
         zoom_factor = 1,
         zoom_rigid = false,
         hotspot_padding = 1
-    }
+    },
 })
