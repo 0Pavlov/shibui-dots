@@ -22,6 +22,11 @@
     display: none !important;
 }
 
+/* Remove search engine button (search bar) */
+#main-button {
+    display: none !important;
+}
+
 /*
 #unified-extensions-button {
 	display: none !important;
