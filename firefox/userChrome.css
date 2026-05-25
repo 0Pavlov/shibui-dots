@@ -83,12 +83,19 @@
 }
 
 /* Hide tab close button, show on hover */
+/* Uncomment if you need this */
+/*
 .tab-close-button.close-icon {
 	opacity: 0 !important;
     transition: opacity 0.5s ease-in-out;
 }
 .tab-close-button.close-icon:hover {
 	opacity: 1 !important;
+}
+*/
+/* Remove tab close button completely (you can use middle click to close tabs) */
+.tab-close-button.close-icon {
+    display: none !important;
 }
 
 /* ADD any button to the toolbar, for achieving the urlbar centering */
