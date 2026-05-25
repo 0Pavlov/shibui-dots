@@ -18,6 +18,10 @@
 	display: none !important;
 }
 
+#trust-icon-container {
+    display: none !important;
+}
+
 /*
 #unified-extensions-button {
 	display: none !important;
