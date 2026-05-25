@@ -8,3 +8,5 @@ Put the userChrome.css there
 For removing tooltips set browser.chrome.toolbar_tips to false
 
 Favorite theme: Dark space - The best dynamic theme
+
+Tabliss.css file contains the custom css for the Tabliss extension

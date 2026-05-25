@@ -1,0 +1,61 @@
+.Widgets .container {
+  width: 100%;
+  text-align: center;
+}
+
+.Widgets .container .Time {
+  margin: 1rem 0;
+  font-size: 32pt; 
+}
+
+.Quote { 
+  font-size: 16pt;
+  padding: 3rem;
+  text-align: center;
+}
+
+.Links a {
+  text-decoration: none;
+  margin-right: 1rem;
+}
+
+.Links a:hover {
+  color: white;
+}
+
+.Unsplash .image {
+  transform: scale(1.0);
+  filter: brightness(0.9);
+}
+
+.details {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+dl {
+  display: flex;
+  text-align: center;
+  padding-left: 35px;
+}
+
+dd {
+  padding-left: 20px;
+  padding-right: 40px;
+}
+
+.Overlay, .credit {
+  opacity: 0.0;
+  color: grey;
+  font-family: inherit;
+}
+
+.credit:hover {
+  opacity: 0.0;
+}
+
+.Overlay:hover {
+  opacity: 1.0;
+}
