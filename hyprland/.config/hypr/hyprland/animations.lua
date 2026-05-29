@@ -8,15 +8,16 @@ hl.config({
 -- ===============================================================================================
 -- Curves (bezier)
 -- ===============================================================================================
---hl.curve("expressiveFastSpatial",    { type = "bezier", points = { {0.42, 1.67}, {0.21, 0.90} } })
---hl.curve("expressiveSlowSpatial",    { type = "bezier", points = { {0.39, 1.29}, {0.35, 0.98} } })
---hl.curve("expressiveDefaultSpatial", { type = "bezier", points = { {0.38, 1.21}, {0.22, 1.00} } })
 hl.curve("emphasizedDecel",          { type = "bezier", points = { {0.05, 0.7},  {0.1,  1.0 } } })
 hl.curve("emphasizedAccel",          { type = "bezier", points = { {0.3,  0.0},  {0.8,  0.15} } })
-hl.curve("standardDecel",            { type = "bezier", points = { {0.0,  0.0},  {0.0,  1.0 } } })
 hl.curve("menu_decel",               { type = "bezier", points = { {0.1,  1.0},  {0.0,  1.0 } } })
 hl.curve("menu_accel",               { type = "bezier", points = { {0.52, 0.03}, {0.72, 0.08} } })
 hl.curve("stall",                    { type = "bezier", points = { {1.0, -0.1},  {0.7,  0.85} } })
+-- ===============================================================================================
+-- Curves (springs)
+-- ===============================================================================================
+hl.curve("SpringLowBounce",          { type = "spring",mass = 0.75,stiffness = 30,dampening = 6.9 })
+hl.curve("SpringBounce",             { type = "spring",mass = 1,stiffness = 30,dampening = 7.5 })
 
 -- ===============================================================================================
 -- Animation parameters
@@ -35,7 +36,7 @@ hl.curve("stall",                    { type = "bezier", points = { {1.0, -0.1}, 
 -- New window appears – scales from X% size to full size (pop‑in)
 hl.animation({
     leaf = "windowsIn",
-        enabled = true, speed = 5, bezier = "emphasizedDecel",
+        enabled = true, speed = 5, spring = "SpringLowBounce",
         style = "popin 1%"
 })
 
@@ -64,7 +65,7 @@ hl.animation({
 -- Window movement / resize – slides to its new position/size
 hl.animation({
     leaf = "windowsMove",
-        enabled = true, speed = 5, bezier = "emphasizedDecel",
+        enabled = true, speed = 5, spring = "SpringLowBounce",
         style = "slide"
 })
 
@@ -111,7 +112,7 @@ hl.animation({
 -- Regular workspace switching – slides the new workspace into view
 hl.animation({
     leaf = "workspaces",
-        enabled = true, speed = 5, bezier = "menu_decel",
+        enabled = true, speed = 5, spring = "SpringBounce",
         style = "slide"
 })
 
