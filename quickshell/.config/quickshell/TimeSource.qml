@@ -17,7 +17,7 @@ Singleton {
         const now = clock.date.getTime();
 
         // Add custom 8-hour offset (8 hours * 60 mins * 60 secs * 1000 ms)
-        const offset = 8 * 60 * 60 * 1000;
+        const offset = 7 * 60 * 60 * 1000;
         const targetDate = new Date(now + offset);
 
         // Format the time to HH:mm AP (e.g. 04:30 PM)
