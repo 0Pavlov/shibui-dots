@@ -21,7 +21,7 @@ hl.bind("Print", hl.dsp.exec_cmd("grim -g \"$(slurp)\" - | swappy -f -"))
 
 -- Applications
 hl.bind(mainMod .. " + Return", hl.dsp.exec_cmd(gpu .. " " .. terminal))
-hl.bind(mainMod .. " + O", hl.dsp.exec_cmd(obs))
+hl.bind(mainMod .. " + O", hl.dsp.exec_cmd(gpu .. " " .. obs))
 hl.bind(mainMod .. " + W", hl.dsp.exec_cmd(browser))
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
 
