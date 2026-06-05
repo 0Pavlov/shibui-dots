@@ -81,6 +81,15 @@ Rectangle {
         anchors.fill: parent
         // Required to detect hover state without clicking
         hoverEnabled: true 
+
+        // Trigger Dropdown OSD when clicked
+        onClicked: {
+            // Flash the button as visual feedback
+            flashAnim.restart()
+
+            // Toggle the OSD
+            controlOsd.toggle()
+        }
     }
 
     // -------------------------------------------------------------------------
@@ -90,11 +99,8 @@ Rectangle {
     Text {
         anchors.verticalCenter: parent.verticalCenter // Vertically centered
         anchors.horizontalCenter: parent.horizontalCenter // Vertically centered
-
-        // Translate it slightly (for the icons that are not quet centered)
         transform: Translate { x: -1.1; y: -1 }
 
-        // Just an Endeavour logo
         text: " "
         
         //color: "#cdd6f4"

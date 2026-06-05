@@ -13,6 +13,12 @@ Scope {
             Quickshell.inhibitReloadPopup();
         }
     }
+
+    // Define the control osd globally
+    ControlDropdown {
+        id: controlOsd
+    }
+
     // Load the Bar component defined in Bar.qml
     // Quickshell automatically finds files starting with Capital letters
     // in the same directory
@@ -21,4 +27,8 @@ Scope {
     KbLayoutOSD {}
     // Theme switcher OSD
     ThemeSwitcherOSD {}
+    // Control dropdown OSD
+    ControlDropdown {}
+    // Volume OSD
+    //VolumeOSD {}
 }
