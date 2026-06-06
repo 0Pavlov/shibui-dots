@@ -2,6 +2,10 @@
 	display: none !important;
 }
 
+#statuspanel {
+  display: none !important;
+}
+
 #page-action-buttons {
 	display: none !important;
 }
