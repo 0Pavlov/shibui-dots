@@ -16,8 +16,8 @@ hl.curve("stall",                    { type = "bezier", points = { {1.0, -0.1}, 
 -- ===============================================================================================
 -- Curves (springs)
 -- ===============================================================================================
-hl.curve("SpringLowBounce",          { type = "spring",mass = 0.75,stiffness = 30,dampening = 6.9 })
-hl.curve("SpringBounce",             { type = "spring",mass = 1,stiffness = 30,dampening = 7.5 })
+hl.curve("SpringLowBounce",          { type = "spring",mass = 0.75,stiffness = 220,dampening = 18.7 })
+hl.curve("SpringBounce",             { type = "spring",mass = 1,stiffness = 250,dampening = 21.6 })
 
 -- ===============================================================================================
 -- Animation parameters
