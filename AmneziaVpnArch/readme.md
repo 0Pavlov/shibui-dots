@@ -8,8 +8,78 @@ yay -S amneziawg-tools amneziawg-go openresolv
 ### 2. Decode the `vpn://` Key
 If you only have the `vpn://` text key and need to extract the raw IPs and Keys, run this **Python decoder** (replace the key variable with your new key):
 
+OR just use 'AmneziaWG native format' option while generating a config in the 'parent' app (the function is brought back in the recent 3.1 update).
+
+```Python
+import base64
+import json
+import zlib
+
+VPN_CONNECTION_KEY = "your key"
+
+def decode_vpn_string(vpn_str):
+    encoded = vpn_str.replace("vpn://", "").strip()
+    padding = 4 - (len(encoded) % 4)
+    if padding != 4:
+        encoded += "=" * padding
+    
+    compressed = base64.urlsafe_b64decode(encoded)
+    decompressed = zlib.decompress(compressed[4:])
+    return json.loads(decompressed)
+
+def find_ini_string(data):
+    if isinstance(data, dict):
+        if "config" in data and isinstance(data["config"], str) and "[Interface]" in data["config"]:
+            return data["config"]
+            
+        for k, v in data.items():
+            if isinstance(v, str):
+                v_str = v.strip()
+                if v_str.startswith("{") or v_str.startswith("["):
+                    try:
+                        parsed = json.loads(v_str)
+                        res = find_ini_string(parsed)
+                        if res: return res
+                    except json.JSONDecodeError:
+                        pass
+                
+                if "[Interface]" in v and "[Peer]" in v:
+                    return v
+                    
+            elif isinstance(v, (dict, list)):
+                res = find_ini_string(v)
+                if res: return res
+                
+    elif isinstance(data, list):
+        for item in data:
+            res = find_ini_string(item)
+            if res: return res
+            
+    return None
+
+def main():
+    try:
+        data = decode_vpn_string(VPN_CONNECTION_KEY)
+    except Exception as e:
+        print(f"Error decoding VPN string: {e}")
+        return
+
+    # Grab the clean WireGuard string
+    raw_config = find_ini_string(data)
+
+    if raw_config:
+        # Swap Amnezia's unresolved DNS placeholders with actual addresses
+        final_config = raw_config.replace("$PRIMARY_DNS", "1.1.1.1").replace("$SECONDARY_DNS", "1.0.0.1")
+        print(final_config.strip())
+    else:
+        print("# Could not find the embedded [Interface] config text.")
+
+if __name__ == "__main__":
+    main()
+```
+
 ```bash
-python -c 'import sys, base64, zlib; k="YOUR_VPN_KEY_WITHOUT_VPN_PREFIX"; k += "=" * (4 - len(k) % 4); d = base64.urlsafe_b64decode(k); print(zlib.decompress(d[4:]).decode())'
+python decoder.py > awg0.conf
 ```
 
 ### 3. Create the Configuration
@@ -22,35 +92,6 @@ sudo mkdir -p /etc/amnezia/amneziawg/
 **Create file:**
 ```bash
 sudo nvim /etc/amnezia/amneziawg/awg0.conf
-```
-
-**Paste Template (Fill with data from Step 2 the format will be different, so format it through any LLM):**
-```ini
-[Interface]
-# Identity (From Python Output)
-PrivateKey = <client_priv_key>
-Address = <client_ip>/32
-DNS = 1.1.1.1, 1.0.0.1
-MTU = 1280
-
-# Obfuscation (From Python Output)
-Jc = <Jc>
-Jmin = <Jmin>
-Jmax = <Jmax>
-S1 = <S1>
-S2 = <S2>
-H1 = <H1>
-H2 = <H2>
-H3 = <H3>
-H4 = <H4>
-
-[Peer]
-# Connection (From Python Output)
-PublicKey = <server_pub_key>
-PresharedKey = <psk_key>
-Endpoint = <server_ip>:44908
-AllowedIPs = 0.0.0.0/0, ::/0
-PersistentKeepalive = 25
 ```
 
 **Secure it:**
