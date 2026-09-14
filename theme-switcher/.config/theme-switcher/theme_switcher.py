@@ -22,3 +22,5 @@ quickshell.change_theme(theme_name)
 ghostty.change_theme(theme_name)
 # Change nvim theme
 nvim.change_theme(theme_name)
+# Change background image
+background.change_theme(theme_name)
