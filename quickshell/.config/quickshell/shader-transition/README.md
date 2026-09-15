@@ -3,7 +3,7 @@
 This is a custom theme transition module that supports shader transitions for the WHOLE desktop.
 
 <p width="100%">
-  <video src="[Placeholder: video_clip_here_todo]"></video>
+  <video src="https://github.com/user-attachments/assets/0bcbcdfd-0b78-4393-9827-1100c1349c43"></video>
 </p>
 
 Essentially, this module does the following:
@@ -50,7 +50,7 @@ function applyTheme() {
 
 | How it is usually done | The way I want it to look |
 |------------------------|---------------------------|
-| <video src="[Placeholder: video_clip_here_todo]"></video> | <video src="[Placeholder: video_clip_here_todo]"></video> |
+| <video src="[Placeholder: video_clip_here_todo]"></video> | <video src="https://github.com/user-attachments/assets/65ff698d-1849-4d50-8fa8-801705ad7605"></video> |
 
 ---
 
