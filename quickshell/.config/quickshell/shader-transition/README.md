@@ -48,6 +48,7 @@ function applyTheme() {
 
 ### Side-by-Side Comparison
 Restart example is from: https://www.youtube.com/watch?v=H_g1sf1PWt0
+(notice how the whole shell restarts and windows are jumping around)
 
 | How it is usually done | The way I want it to look |
 |------------------------|---------------------------|
