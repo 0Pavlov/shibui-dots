@@ -47,6 +47,7 @@ function applyTheme() {
 ---
 
 ### Side-by-Side Comparison
+Restart example is from: https://www.youtube.com/watch?v=H_g1sf1PWt0
 
 | How it is usually done | The way I want it to look |
 |------------------------|---------------------------|
