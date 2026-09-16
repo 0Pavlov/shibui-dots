@@ -50,7 +50,7 @@ function applyTheme() {
 
 | How it is usually done | The way I want it to look |
 |------------------------|---------------------------|
-| <video src="[Placeholder: video_clip_here_todo]"></video> | <video src="https://github.com/user-attachments/assets/65ff698d-1849-4d50-8fa8-801705ad7605"></video> |
+| <video src="https://github.com/user-attachments/assets/8088f2ee-2604-447c-b1c0-6c9e0665d1d0"></video> | <video src="https://github.com/user-attachments/assets/65ff698d-1849-4d50-8fa8-801705ad7605"></video> |
 
 ---
 
