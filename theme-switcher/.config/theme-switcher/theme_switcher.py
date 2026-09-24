@@ -3,6 +3,7 @@ from hyprland import hyprland
 from quickshell import quickshell
 from ghostty import ghostty
 from nvim import nvim
+from background import background
 
 # Extract argv
 argv: list = sys.argv
