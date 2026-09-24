@@ -82,7 +82,7 @@ hl.animation({
 -- Layer appears – scales from X% size to full (e.g., Rofi opening)
 hl.animation({
     leaf = "layersIn",
-        enabled = true, speed = 1, bezier = "emphasizedDecel",
+        enabled = false, speed = 1, bezier = "emphasizedDecel",
         style = "popin 93%" 
 })
 
@@ -96,7 +96,7 @@ hl.animation({
 -- Layer fades in (opacity) when opening
 hl.animation({
     leaf = "fadeLayersIn",
-        enabled = true, speed = 1, bezier = "menu_decel"
+        enabled = false, speed = 1, bezier = "menu_decel"
 })
 
 -- Layer fades out (opacity) when closing
